@@ -1,0 +1,18 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "",
+
+    "COSMOS_ENDPOINT": "https://<your-account>.documents.azure.com:443/",
+    "COSMOS_KEY": "<primary-key>",
+    "COSMOS_DATABASE": "tickettriage",
+    "COSMOS_CONTAINER": "tickets",
+
+    "ADMIN_API_KEY": "",
+    "MAX_PAGE_SIZE": "100"
+  },
+  "Host": {
+    "CORS": "*"
+  }
+}

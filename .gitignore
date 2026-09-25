@@ -216,3 +216,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Azure Functions / Ticket Triage
+# local.settings.json holds the Cosmos master key and admin key - never commit it.
+backend/local.settings.json
+backend/.python_packages/
+backend/local.settings.json.sample.local
+.azure/
+
+# Node
+node_modules/
+
+# Handoff source documents (duplicates of HANDOFF.md, kept out of the repo)
+*.zip
+*.docx
