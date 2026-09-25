@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Ticket Triage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-bg" id="admin-dashboard">
+    <nav class="navbar admin-navbar">
+        <div class="nav-brand">Ticket Triage <span>Admin</span></div>
+        <div class="nav-controls">
+            <input type="password" id="admin-key" placeholder="API Key (Optional)" class="api-key-input">
+            <a href="index.html" class="nav-link">&larr; Back to Portal</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <div class="dashboard-header">
+            <h2>Ticket Triage Overview</h2>
+            <div class="filter-bar shadow-sm">
+                <input type="text" id="filter-search" placeholder="Search by email or title...">
+                <select id="filter-category"><option value="">All Categories</option></select>
+                <select id="filter-status"><option value="">All Statuses</option></select>
+                <button onclick="loadTickets()" class="btn btn-secondary">Apply Filters</button>
+            </div>
+        </div>
+
+        <div class="table-card shadow-sm">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Ticket Details</th>
+                        <th>Requester</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tickets-body">
+                    <!-- Loaded dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

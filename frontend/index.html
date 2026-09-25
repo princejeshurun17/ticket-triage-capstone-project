@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Support | Submit Ticket</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="user-bg">
+    <nav class="navbar">
+        <div class="nav-brand">Ticket Triage <span>Portal</span></div>
+        <a href="admin.html" class="nav-link">Admin Login &rarr;</a>
+    </nav>
+
+    <main class="container">
+        <div class="form-card shadow-lg">
+            <div class="card-header">
+                <h2>Submit a Support Request</h2>
+                <p>Our operational excellence team will review your ticket and assign it to the right department.</p>
+            </div>
+            
+            <form id="ticket-form" class="modern-form">
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" placeholder="e.g. Aiman Rahman" required>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="email">Work Email *</label>
+                        <input type="email" id="email" placeholder="aiman@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Issue Title *</label>
+                    <input type="text" id="title" placeholder="Brief summary of the issue" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Detailed Description *</label>
+                    <textarea id="description" rows="5" placeholder="Please provide as much detail as possible..." required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="priority">Priority Level</label>
+                        <select id="priority">
+                            <option value="">-- Optional --</option>
+                        </select>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="category">Category</label>
+                        <select id="category">
+                            <option value="">-- Auto-Suggest --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
+                </div>
+                <div id="submit-message" class="message-box hidden"></div>
+            </form>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
