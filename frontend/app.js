@@ -64,11 +64,20 @@ async function submitTicket(e) {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         title: document.getElementById('title').value,
-        description: document.getElementById('description').value,
-        priority: document.getElementById('priority').value || undefined,
-        category: document.getElementById('category').value || undefined
+        description: document.getElementById('description').value
     };
 
+    // Only attach priority if the user specifically selected an option
+    const selectedPriority = document.getElementById('priority').value;
+    if (selectedPriority !== "") {
+        payload.priority = selectedPriority;
+    }
+
+    // Only attach category if the user specifically selected an option
+    const selectedCategory = document.getElementById('category').value;
+    if (selectedCategory !== "") {
+        payload.category = selectedCategory;
+    }
     try {
         const res = await fetch('/api/tickets', {
             method: 'POST',
