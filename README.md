@@ -178,6 +178,27 @@ Azure Static Web App, Free plan, GitHub Actions deploys on every push to `main`.
 | API location | `backend` |
 | Output location | *(blank — the frontend is prebuilt static files, no bundler)* |
 
+### Provisioned resources
+
+| Resource | Name | Detail |
+|---|---|---|
+| Resource group | `rg-tickettriage` | **Central India** (`centralindia`) |
+| Cosmos DB account | `cosmos-tickettriage` | NoSQL, free tier, Session consistency |
+| Database | `tickettriage` | Shared throughput, 400 RU/s |
+| Container | `tickets` | Partition key `/id` |
+
+> **Region note.** The hosting subscription carries a `sys.regionrestriction`
+> policy limiting deployments to `centralindia`, `eastasia`, `indonesiacentral`,
+> `indiasouthcentral` and `japanwest`. `southeastasia` and `eastus` are rejected
+> with a generic *"best available regions"* error, and Cosmos in `eastasia`
+> returned a capacity/quota failure — hence Central India. Any future regional
+> resource added to this subscription must target one of those five regions.
+> Static Web Apps are global and unaffected.
+
+> The subscription also needed `Microsoft.DocumentDB` registered before Cosmos
+> could be created (`az provider register -n Microsoft.DocumentDB`). On a fresh
+> or specialised subscription this is a one-time step.
+
 Then set the app settings so the deployed backend uses Cosmos DB:
 
 ```bash
