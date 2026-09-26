@@ -2,6 +2,12 @@
 
 An automated ticket triage system designed to streamline customer support operations, categorize inbound requests, and prioritize workflow efficiency.
 
+**Live:** https://nice-bush-0ff7e3d00.3.azurestaticapps.net
+(submission portal at `/`, admin dashboard at `/admin.html`, API under `/api`)
+
+Deployed and verified against Cosmos DB — `GET /api/health` returns
+`{"status":"ok","storage":"cosmos","adminKeyConfigured":false}`.
+
 ---
 
 ## 📌 Business & Operational Impact
